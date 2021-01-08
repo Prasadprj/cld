@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ $# == 0 ]; then
+echo "Usage :/root/script2.sh"
+exit
+elif [ $1 == userlist ]; then
+for i in `cat /root/userlist`
+do
+useradd -s /bin/false "$i"
+echo "user $i added successfully"
+done
+else
+echo "Input file not found"
+fi
